@@ -39,9 +39,16 @@ public class VectorExercises : MonoBehaviour
 
     }
 
+    // Called when the boolean for 2a is true
     void Question2a()
     {
-        
+        // Set the coordinated for starting and ending points
+        startPt = new Vector2(0, 0);
+        endPt = new Vector2(2, 3);
+
+        // Draw a line between the starting and ending point stated above. Also set isActive to true
+        drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.red);
+        drawnLine.EnableDrawing(true);
     }
 
     void Question2b(int n)
