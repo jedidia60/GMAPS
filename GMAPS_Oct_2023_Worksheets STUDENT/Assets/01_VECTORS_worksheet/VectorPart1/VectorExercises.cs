@@ -19,7 +19,7 @@ public class VectorExercises : MonoBehaviour
         if (Q2a)
             Question2a();
         if (Q2b)
-            Question2b(20);
+            Question2b(2);
         if (Q2d)
             Question2d();
         if (Q2e)
@@ -32,6 +32,8 @@ public class VectorExercises : MonoBehaviour
             Question3c();
         if (projection)
             Projection();
+
+        CalculateGameDimensions();
     }
 
     public void CalculateGameDimensions()
@@ -59,10 +61,9 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
-        
-
         for (int i = 0; i < n; i++)
         {
+            print(minX + " " + maxX );
             // Randomize the XY coordinates of the starting and ending point
             startPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             endPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
