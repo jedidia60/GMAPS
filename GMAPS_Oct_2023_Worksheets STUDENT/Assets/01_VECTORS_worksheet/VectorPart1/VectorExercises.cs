@@ -53,7 +53,16 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
-        
+        for (int i = 0; i < n; i++)
+        {
+            // Randomize the XY coordinates of the starting and ending point
+            startPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+
+            // Draw a line between the starting and ending point stated above. Also set isActive to true
+            drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.red);
+            drawnLine.EnableDrawing(true);
+        }
     }
 
     void Question2d()
