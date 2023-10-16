@@ -97,9 +97,7 @@ public class VectorExercises : MonoBehaviour
 
     void Question2d()
     {
-        // Create a red arrow from (0, 0, 0) to (5, 5, 0) for specified amount of seconds
-        // Only visible in scene view
-        DebugExtension.DebugArrow(new Vector3(0, 0, 0), new Vector3(5, 5, 0), Color.red, 10f);
+       
     }
 
     void Question2e(int n)
