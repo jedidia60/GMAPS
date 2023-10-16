@@ -36,7 +36,13 @@ public class VectorExercises : MonoBehaviour
 
     public void CalculateGameDimensions()
     {
+        GameHeight = Camera.main.orthographicSize * 2f;
+        GameWidth = Camera.main.aspect * GameHeight;
 
+        maxX = GameWidth / 2;
+        maxY = GameHeight / 2;
+        minX = -maxX;
+        minY = -maxY;
     }
 
     // Called when the boolean for 2a is true
@@ -53,11 +59,13 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
+        
+
         for (int i = 0; i < n; i++)
         {
             // Randomize the XY coordinates of the starting and ending point
-            startPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
-            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+            startPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+            endPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
             // Draw a line between the starting and ending point stated above. Also set isActive to true
             drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.red);
