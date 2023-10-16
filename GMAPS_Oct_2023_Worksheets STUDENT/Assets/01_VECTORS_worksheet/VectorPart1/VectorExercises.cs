@@ -3,7 +3,7 @@ using UnityEngine;
 public class VectorExercises : MonoBehaviour
 {
     [SerializeField] LineFactory lineFactory;
-    [SerializeField] bool Q2a, Q2b, Q2d, Q2e;
+    [SerializeField] bool Q2a, Q2b, Q2c, Q2d, Q2e;
     [SerializeField] bool Q3a, Q3b, Q3c, projection;
 
     private Line drawnLine;
@@ -79,7 +79,7 @@ public class VectorExercises : MonoBehaviour
         }
     }
     
-    // Called when the boolean for 2b is true
+    // Called when the boolean for 2c is true
     void Question2c(int n)
     {
         // Looped based on the number of lines wanted
@@ -97,7 +97,9 @@ public class VectorExercises : MonoBehaviour
 
     void Question2d()
     {
-
+        // Create a red arrow from (0, 0, 0) to (5, 5, 0) for specified amount of seconds
+        // Only visible in scene view
+        DebugExtension.DebugArrow(new Vector3(0, 0, 0), new Vector3(5, 5, 0), Color.red, 10f);
     }
 
     void Question2e(int n)
