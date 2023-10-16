@@ -16,10 +16,13 @@ public class VectorExercises : MonoBehaviour
 
     private void Start()
     {
+        // Call this function first so the variables would be updated before it is used
+        CalculateGameDimensions();
+
         if (Q2a)
             Question2a();
         if (Q2b)
-            Question2b(2);
+            Question2b(5);
         if (Q2d)
             Question2d();
         if (Q2e)
@@ -32,10 +35,9 @@ public class VectorExercises : MonoBehaviour
             Question3c();
         if (projection)
             Projection();
-
-        CalculateGameDimensions();
     }
 
+    // Called at the start to ensure the dimensions is calculated before it's used
     public void CalculateGameDimensions()
     {
         GameHeight = Camera.main.orthographicSize * 2f;
@@ -59,11 +61,12 @@ public class VectorExercises : MonoBehaviour
         drawnLine.EnableDrawing(true);
     }
 
+    // Called when the boolean for 2b is true
     void Question2b(int n)
     {
+        // Looped based on the number of lines wanted
         for (int i = 0; i < n; i++)
         {
-            print(minX + " " + maxX );
             // Randomize the XY coordinates of the starting and ending point
             startPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             endPt = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
