@@ -23,6 +23,8 @@ public class VectorExercises : MonoBehaviour
             Question2a();
         if (Q2b)
             Question2b(5);
+        if (Q2c)
+            Question2c(5);
         if (Q2d)
             Question2d();
         if (Q2e)
@@ -63,6 +65,22 @@ public class VectorExercises : MonoBehaviour
 
     // Called when the boolean for 2b is true
     void Question2b(int n)
+    {
+        // Looped based on the number of lines wanted
+        for (int i = 0; i < n; i++)
+        {
+            // Randomize the XY coordinates of the starting and ending point
+            startPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+
+            // Draw a line between the starting and ending point stated above. Also set isActive to true
+            drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.red);
+            drawnLine.EnableDrawing(true);
+        }
+    }
+    
+    // Called when the boolean for 2b is true
+    void Question2c(int n)
     {
         // Looped based on the number of lines wanted
         for (int i = 0; i < n; i++)
