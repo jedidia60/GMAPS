@@ -302,8 +302,8 @@ MonoBehaviour:
   Q2b: 0
   Q2c: 0
   Q2d: 0
-  Q2e: 1
-  Q3a: 0
+  Q2e: 0
+  Q3a: 1
   Q3b: 0
   Q3c: 0
   projection: 0
