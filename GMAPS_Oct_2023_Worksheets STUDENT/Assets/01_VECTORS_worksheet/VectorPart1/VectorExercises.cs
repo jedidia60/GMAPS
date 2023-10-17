@@ -151,7 +151,15 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3c()
     {
+        // Create HVector2D a with (3, 5) coordinate
+        HVector2D a = new HVector2D(3, 5);
 
+        // Draw a as a red arrow
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+
+        // Normalize a then draw it as a green arrow
+        a.Normalize();
+        DebugExtension.DebugArrow(Vector3.zero + new Vector3(1, 0), a.ToUnityVector3(), Color.green, 60f);
     }
 
     public void Projection()

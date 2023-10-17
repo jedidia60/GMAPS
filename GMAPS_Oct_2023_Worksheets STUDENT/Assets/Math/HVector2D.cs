@@ -68,10 +68,12 @@ public class HVector2D
         return magnitude;
     }
 
-    //public void Normalize()
-    //{
-
-    //}
+    public void Normalize()
+    {
+        float length = Magnitude();
+        x = x / length;
+        y = y / length;
+    }
 
     //public float DotProduct(/*???*/)
     //{
