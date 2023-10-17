@@ -138,8 +138,10 @@ public class VectorExercises : MonoBehaviour
     {
         // Create HVector2D a with a (3, 5) coordinate
         // Create HVector2D b that is twice the size of a
+        // Divide the scale of a by 2
         HVector2D a = new HVector2D(3, 5);
         HVector2D b = a * 2;
+        a = a / 2;
 
         // Draw a as a red arrow
         // Draw b as a green arrow and offset it by 1 unit on the x axis from the point of origin
