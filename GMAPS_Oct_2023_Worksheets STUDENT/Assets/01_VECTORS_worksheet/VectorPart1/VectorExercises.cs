@@ -136,11 +136,15 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3b()
     {
-        // Your code here
-        // ...
+        // Create HVector2D a with a (3, 5) coordinate
+        // Create HVector2D b that is twice the size of a
+        HVector2D a = new HVector2D(3, 5);
+        HVector2D b = a * 2;
 
-        //DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
-        // Your code here
+        // Draw a as a red arrow
+        // Draw b as a green arrow and offset it by 1 unit on the x axis from the point of origin
+        DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
+        DebugExtension.DebugArrow(Vector3.zero + new Vector3(1, 0), b.ToUnityVector3(), Color.green, 60f);
     }
 
     public void Question3c()
