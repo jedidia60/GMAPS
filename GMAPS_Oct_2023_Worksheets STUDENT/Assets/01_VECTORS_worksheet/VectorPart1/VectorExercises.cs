@@ -117,12 +117,12 @@ public class VectorExercises : MonoBehaviour
     {
         HVector2D a = new HVector2D(3, 5);
         HVector2D b = new HVector2D(-4, 2);
-        HVector2D c = a + b;
+        HVector2D c = a - b;
 
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
         DebugExtension.DebugArrow(Vector3.zero, b.ToUnityVector3(), Color.green, 60f);
         DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
-        DebugExtension.DebugArrow(a.ToUnityVector3(), b.ToUnityVector3(), Color.green, 60f);
+        DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.green, 60f);
 
 
         Debug.Log("Magnitude of a = " +  a.Magnitude().ToString("F2"));
