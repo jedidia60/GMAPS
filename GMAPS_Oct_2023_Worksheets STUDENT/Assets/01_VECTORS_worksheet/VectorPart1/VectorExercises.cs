@@ -115,16 +115,20 @@ public class VectorExercises : MonoBehaviour
 
     public void Question3a()
     {
+        // Set the HVector values of a, b and c
         HVector2D a = new HVector2D(3, 5);
         HVector2D b = new HVector2D(-4, 2);
         HVector2D c = a - b;
 
+        // Draw them out using the DebugExtension plugin
         DebugExtension.DebugArrow(Vector3.zero, a.ToUnityVector3(), Color.red, 60f);
         DebugExtension.DebugArrow(Vector3.zero, b.ToUnityVector3(), Color.green, 60f);
         DebugExtension.DebugArrow(Vector3.zero, c.ToUnityVector3(), Color.white, 60f);
+
+        // Draw another arrow b but in the reversed direction, starting from the head of arrow a
         DebugExtension.DebugArrow(a.ToUnityVector3(), -b.ToUnityVector3(), Color.green, 60f);
 
-
+        // Print out the magnitude of the different arrows to the console in 2 decimal place
         Debug.Log("Magnitude of a = " +  a.Magnitude().ToString("F2"));
         Debug.Log("Magnitude of a = " +  b.Magnitude().ToString("F2"));
         Debug.Log("Magnitude of a = " +  c.Magnitude().ToString("F2"));

@@ -9,6 +9,7 @@ public class HVector2D
     public float x, y;
     public float h;
 
+    // Create a HVector2D variable using x and y in as their arguments
     public HVector2D(float _x, float _y)
     {
         x = _x;
@@ -16,6 +17,7 @@ public class HVector2D
         h = 1.0f;
     }
 
+    // Set the x, y value of the HVector2D variable using Vector2
     public HVector2D(Vector2 _vec)
     {
         x = _vec.x;
@@ -23,6 +25,7 @@ public class HVector2D
         h = 1.0f;
     }
 
+    // Default values of the HVector2D construct
     public HVector2D()
     {
         x = 0;
@@ -30,30 +33,35 @@ public class HVector2D
         h = 1.0f;
     }
 
+    // Add the x and y values of 2 different HVector2D variables
     public static HVector2D operator +(HVector2D a, HVector2D b)
     {
         HVector2D c = new HVector2D(a.x + b.x, a.y + b.y);
         return c;
     }
 
+    // Subtract the x and y values of 2 different HVector2D variables
     public static HVector2D operator -(HVector2D a, HVector2D b)
     {
         HVector2D c = new HVector2D(a.x - b.x, a.y - b.y);
         return c;
     }
 
-    public static HVector2D operator *(HVector2D a, HVector2D b)
+    // Increase the magnitude of a HVector2D variable
+    public static HVector2D operator *(HVector2D a, float b)
     {
-        HVector2D c = new HVector2D(a.x * b.x, a.y * b.y);
+        HVector2D c = new HVector2D(a.x * b, a.y * b);
         return c;
     }
 
-    public static HVector2D operator /(HVector2D a, HVector2D b)
+    // Decrease the magnitude of a HVector2D variable
+    public static HVector2D operator /(HVector2D a, float b)
     {
-        HVector2D c = new HVector2D(a.x / b.x, a.y / b.y);
+        HVector2D c = new HVector2D(a.x / b, a.y / b);
         return c;
     }
 
+    // Calculate the magnitude of a HVector2D variable
     public float Magnitude()
     {
         float magnitude = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
@@ -80,11 +88,13 @@ public class HVector2D
 
     //}
 
+    // Convert a HVector2D to a Vector2
     public Vector2 ToUnityVector2()
     {
         return new Vector2(x, y);
     }
 
+    // Convert a HVector2D to a Vector3
     public Vector3 ToUnityVector3()
     {
         return new Vector2(x, y);
