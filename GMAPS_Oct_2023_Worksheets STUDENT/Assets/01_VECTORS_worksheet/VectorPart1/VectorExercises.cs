@@ -160,6 +160,7 @@ public class VectorExercises : MonoBehaviour
         // Normalize a then draw it as a green arrow
         a.Normalize();
         DebugExtension.DebugArrow(Vector3.zero + new Vector3(1, 0), a.ToUnityVector3(), Color.green, 60f);
+        Debug.Log(a.Magnitude().ToString("F2"));
     }
 
     public void Projection()
