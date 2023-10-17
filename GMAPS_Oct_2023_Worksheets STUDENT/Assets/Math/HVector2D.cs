@@ -30,59 +30,60 @@ public class HVector2D
         h = 1.0f;
     }
 
-    // public static HVector2D operator +( /*???*/)
-    // {
+    public static HVector2D operator +(HVector2D a, HVector2D b)
+    {
+        HVector2D c = new HVector2D(a.x + b.x, a.y + b.y);
+        return c;
+    }
 
-    // }
+    public static HVector2D operator -(HVector2D a, HVector2D b)
+    {
+        return a - b;
+    }
 
-    // public static HVector2D operator -(/*???*/)
-    // {
+    public static HVector2D operator *(HVector2D a, HVector2D b)
+    {
+        return a * b;
+    }
 
-    // }
+    public static HVector2D operator /(HVector2D a, HVector2D b)
+    {
+        return a / b;
+    }
 
-    // public static HVector2D operator *(/*???*/)
-    // {
+    //public float Magnitude()
+    //{
 
-    // }
+    //}
 
-    // public static HVector2D operator /(/*???*/)
-    // {
+    //public void Normalize()
+    //{
 
-    // }
+    //}
 
-    // public float Magnitude()
-    // {
+    //public float DotProduct(/*???*/)
+    //{
 
-    // }
+    //}
 
-    // public void Normalize()
-    // {
+    //public HVector2D Projection(/*???*/)
+    //{
 
-    // }
+    //}
 
-    // public float DotProduct(/*???*/)
-    // {
+    //public float FindAngle(/*???*/)
+    //{
 
-    // }
-
-    // public HVector2D Projection(/*???*/)
-    // {
-
-    // }
-
-    // public float FindAngle(/*???*/)
-    // {
-
-    // }
+    //}
 
     public Vector2 ToUnityVector2()
     {
-        return Vector2.zero; // change this
+        return new Vector2(x, y);
     }
 
     public Vector3 ToUnityVector3()
     {
-        return Vector2.zero; // change this
+        return new Vector2(x, y);
     }
 
     // public void Print()
