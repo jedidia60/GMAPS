@@ -4,7 +4,7 @@ public class VectorExercises : MonoBehaviour
 {
     [SerializeField] LineFactory lineFactory;
     [SerializeField] bool Q2a, Q2b, Q2c, Q2d, Q2e;
-    [SerializeField] bool Q3a, Q3b, Q3c, projection;
+    [SerializeField] bool Q3a, Q3b, Q3c, Q3d, projection;
 
     private Line drawnLine;
 
@@ -35,6 +35,8 @@ public class VectorExercises : MonoBehaviour
             Question3b();
         if (Q3c)
             Question3c();
+        if (Q3d)
+            Question3d();
         if (projection)
             Projection();
     }
@@ -161,6 +163,11 @@ public class VectorExercises : MonoBehaviour
         a.Normalize();
         DebugExtension.DebugArrow(Vector3.zero + new Vector3(1, 0), a.ToUnityVector3(), Color.green, 60f);
         Debug.Log(a.Magnitude().ToString("F2"));
+    }
+
+    public void Question3d()
+    {
+
     }
 
     public void Projection()
