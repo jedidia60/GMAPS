@@ -38,23 +38,27 @@ public class HVector2D
 
     public static HVector2D operator -(HVector2D a, HVector2D b)
     {
-        return a - b;
+        HVector2D c = new HVector2D(a.x - b.x, a.y - b.y);
+        return c;
     }
 
     public static HVector2D operator *(HVector2D a, HVector2D b)
     {
-        return a * b;
+        HVector2D c = new HVector2D(a.x * b.x, a.y * b.y);
+        return c;
     }
 
     public static HVector2D operator /(HVector2D a, HVector2D b)
     {
-        return a / b;
+        HVector2D c = new HVector2D(a.x / b.x, a.y / b.y);
+        return c;
     }
 
-    //public float Magnitude()
-    //{
-
-    //}
+    public float Magnitude()
+    {
+        float magnitude = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
+        return magnitude;
+    }
 
     //public void Normalize()
     //{
