@@ -14,12 +14,19 @@ public class Mario : MonoBehaviour
 
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
+        gravityDir = (planet.position - transform.position).normalized;
+        moveDir = new Vector3();
+        moveDir = moveDir.normalized * -1f;
 
+        rb.AddForce(moveDir);
+        
+        //gravityNorm = 
+        rb.AddForce(-moveDir);
     }
 }
 
