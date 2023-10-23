@@ -21,7 +21,7 @@ public class Mario : MonoBehaviour
     void FixedUpdate()
     {
         // Get the direction for where the gravitational force is to be applied on
-        gravityDir = (planet.position - transform.position);
+        gravityDir = planet.position - transform.position;
 
         // Set the direction to move the character based on the input given
         moveDir = new Vector3(-gravityDir.y, gravityDir.x, 0).normalized;

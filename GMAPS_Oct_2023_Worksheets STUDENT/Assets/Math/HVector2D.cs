@@ -90,7 +90,7 @@ public class HVector2D
     public float FindAngle(HVector2D b)
     {
         float c = Mathf.Acos(DotProduct(b) / (Magnitude() * b.Magnitude()));
-        return c;
+        return c * Mathf.Rad2Deg;
     }
 
     // Convert a HVector2D to a Vector2
