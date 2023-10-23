@@ -71,8 +71,8 @@ public class HVector2D
     public void Normalize()
     {
         float length = Magnitude();
-        x = x / length;
-        y = y / length;
+        x /= length;
+        y /= length;
     }
 
     //public float DotProduct(/*???*/)
