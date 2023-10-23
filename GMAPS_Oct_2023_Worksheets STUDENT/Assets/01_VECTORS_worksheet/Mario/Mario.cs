@@ -24,8 +24,7 @@ public class Mario : MonoBehaviour
         gravityDir = (planet.position - transform.position);
 
         // Set the direction to move the character based on the input given
-        moveDir = new Vector3();
-        moveDir = moveDir.normalized * -1f;
+        moveDir = new Vector3(-gravityDir.y, gravityDir.x, 0).normalized;
 
         // Add force to the RigidBody2D to move the character in the specified direction and the speed specified in force
         rb.AddForce(moveDir * force);
@@ -36,10 +35,13 @@ public class Mario : MonoBehaviour
         rb.AddForce(gravityNorm * gravityStrength);
 
         // Calculate the angle needed to rotate the character as they move around the planet
-        float angle = Vector3.SignedAngle(transform.position, moveDir, Vector3.forward);
+        float angle = Vector3.SignedAngle(-Vector3.up, gravityDir, Vector3.forward);
 
         // Slowly rotate the character by the angle calculated
-        rb.MoveRotation(Quaternion.Euler(angle, 0, 0));
+        rb.MoveRotation(Quaternion.Euler(0, 0, angle));
+
+        DebugExtension.DebugArrow(transform.position, gravityDir, Color.red);
+        DebugExtension.DebugArrow(transform.position, moveDir, Color.blue);
     }
 }
 

@@ -446,14 +446,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602136174}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1557fb4c613029a4793dc1f812ea31a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 25543976}
   force: 5
-  gravityStrength: 4
+  gravityStrength: 5
 --- !u!50 &1602136179
 Rigidbody2D:
   serializedVersion: 4
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602136174}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c32b138b1f2f6e41a1ffee8a6dbfee3, type: 3}
   m_Name: 
@@ -511,6 +511,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1672728459227633655, guid: 29df0457641db2d4f999446359339959, type: 3}
@@ -570,4 +571,5 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 29df0457641db2d4f999446359339959, type: 3}
