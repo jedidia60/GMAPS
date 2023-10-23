@@ -75,20 +75,23 @@ public class HVector2D
         y /= length;
     }
 
-    //public float DotProduct(/*???*/)
-    //{
+    public float DotProduct(HVector2D b)
+    {
+        float c = x * b.x + y * b.y;
+        return c;
+    }
 
-    //}
+    public HVector2D Projection(HVector2D b)
+    {
+        HVector2D c = b * (DotProduct(b) / b.DotProduct(b));
+        return c;
+    }
 
-    //public HVector2D Projection(/*???*/)
-    //{
-
-    //}
-
-    //public float FindAngle(/*???*/)
-    //{
-
-    //}
+    public float FindAngle(HVector2D b)
+    {
+        float c = Mathf.Acos(DotProduct(b) / (Magnitude() * b.Magnitude()));
+        return c;
+    }
 
     // Convert a HVector2D to a Vector2
     public Vector2 ToUnityVector2()
