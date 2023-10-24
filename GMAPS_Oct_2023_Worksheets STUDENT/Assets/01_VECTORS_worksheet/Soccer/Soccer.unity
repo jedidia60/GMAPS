@@ -155,6 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &180692088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -247,7 +250,6 @@ GameObject:
   - component: {fileID: 200578739}
   - component: {fileID: 200578738}
   - component: {fileID: 200578737}
-  - component: {fileID: 200578742}
   m_Layer: 0
   m_Name: Captain
   m_TagString: Untagged
@@ -267,6 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 1
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &200578738
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -347,20 +352,6 @@ Transform:
   m_Father: {fileID: 1690110630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &200578742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200578736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd85999d8258c74ebb279aeef4236f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsCaptain: 1
-  OtherPlayer: {fileID: 1961090148}
 --- !u!1 &445034020
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &943914672
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -793,6 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1024180121
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -904,6 +901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1099839455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1015,6 +1015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1400767176
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1250,6 +1253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1731149086
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1361,6 +1367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1869517078
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1453,7 +1462,6 @@ GameObject:
   - component: {fileID: 1961090145}
   - component: {fileID: 1961090144}
   - component: {fileID: 1961090143}
-  - component: {fileID: 1961090148}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -1473,6 +1481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e2d3d970781d48baa172c8e8a6935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCaptain: 0
+  OtherPlayers: []
+  rotationSpeed: 1
 --- !u!136 &1961090144
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1552,17 +1563,3 @@ Transform:
   m_Father: {fileID: 1690110630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1961090148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961090142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd85999d8258c74ebb279aeef4236f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsCaptain: 0
-  OtherPlayer: {fileID: 200578742}
