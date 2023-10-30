@@ -70,6 +70,8 @@
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzVerticalRuler.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\_Demo\LineDemo.cs" />
+    <Compile Include="Assets\Math\HMatrix2D.cs" />
+    <Compile Include="Assets\Math\TestMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources_3rd Party\Ruler\readme.txt" />
