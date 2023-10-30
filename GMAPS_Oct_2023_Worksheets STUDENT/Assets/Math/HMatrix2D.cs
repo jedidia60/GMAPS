@@ -23,19 +23,16 @@ public class HMatrix2D
              float m20, float m21, float m22)
     {
         // First row
-        // your code here
         entries[0, 0] = m00;
         entries[0, 1] = m01;
         entries[0, 2] = m02;
 
         // Second row
-        // your code here
         entries[1, 0] = m10;
         entries[1, 1] = m11;
         entries[1, 2] = m12;
 
         // Third row
-        // your code here
         entries[2, 0] = m20;
         entries[2, 1] = m21;
         entries[2, 2] = m22;
@@ -43,7 +40,7 @@ public class HMatrix2D
 
     public static HMatrix2D operator +(HMatrix2D left, HMatrix2D right)
     {
-        HMatrix2D addition = new HMatrix2D{};
+        HMatrix2D addition = new HMatrix2D();
         for (int row = 0; row < 3; row++)
             for (int col = 0; col < 3; col++)
                 addition.entries[row, col] = left.entries[row, col] + right.entries[row, col];
@@ -53,7 +50,7 @@ public class HMatrix2D
 
     public static HMatrix2D operator -(HMatrix2D left, HMatrix2D right)
     {
-        HMatrix2D subtraction = new HMatrix2D{};
+        HMatrix2D subtraction = new HMatrix2D();
         for (int row = 0; row < 3; row++)
             for (int col = 0; col < 3; col++)
                 subtraction.entries[row, col] = left.entries[row, col] + right.entries[row, col];
@@ -63,7 +60,7 @@ public class HMatrix2D
 
     public static HMatrix2D operator *(HMatrix2D left, float scalar)
     {
-        HMatrix2D multiplication = new HMatrix2D{};
+        HMatrix2D multiplication = new HMatrix2D();
         for (int row = 0; row < 3; row++)
             for (int col = 0; col < 3; col++)
                 multiplication.entries[row, col] = left.entries[row, col] * scalar;
@@ -72,7 +69,6 @@ public class HMatrix2D
     }
 
     // Note that the second argument is a HVector2D object
-    //
     public static HVector2D operator *(HMatrix2D left, HVector2D right)
     {
         return new HVector2D
@@ -82,29 +78,36 @@ public class HMatrix2D
         );
     }
 
-    //// Note that the second argument is a HMatrix2D object
-    ////
-    //public static HMatrix2D operator *(HMatrix2D left, HMatrix2D right)
-    //{
-    //    return new HMatrix2D
-    //    (
-    //        /* 
-    //            00 01 02    00 xx xx
-    //            xx xx xx    10 xx xx
-    //            xx xx xx    20 xx xx
-    //            */
-    //        left.Entries[0, 0] * right.Entries[0, 0] + left.Entries[0, 1] * right.Entries[1, 0] + left.Entries[0, 2] * right.Entries[2, 0],
+    // Note that the second argument is a HMatrix2D object
+    public static HMatrix2D operator *(HMatrix2D left, HMatrix2D right)
+    {
+        HMatrix2D result = new HMatrix2D();
+        for (int mat1Row = 0; mat1Row < 3; mat1Row++)
+            for (int mat2Col = 0; mat2Col < 3; mat2Col++)
+            {
+                result.entries[mat1Row, mat2Col] = 0;
+                for (int insideNum = 0; insideNum < 3; insideNum++)
+                {
+                    result.entries[mat1Row, mat2Col] += left.entries[mat1Row, insideNum] * right.entries[insideNum, mat2Col];
+                }
+            }
+        return result;
+            /* 
+                00 01 02    00 xx xx
+                xx xx xx    10 xx xx
+                xx xx xx    20 xx xx
+                */
+            //left.Entries[0, 0] * right.Entries[0, 0] + left.Entries[0, 1] * right.Entries[1, 0] + left.Entries[0, 2] * right.Entries[2, 0],
 
-    //        /* 
-    //            00 01 02    xx 01 xx
-    //            xx xx xx    xx 11 xx
-    //            xx xx xx    xx 21 xx
-    //            */
-    //        left.Entries[0, 0] * right.Entries[0, 1] + left.Entries[0, 1] * right.Entries[1, 1] + left.Entries[0, 2] * right.Entries[2, 1],
+            /* 
+                00 01 02    xx 01 xx
+                xx xx xx    xx 11 xx
+                xx xx xx    xx 21 xx
+                */
+            //left.Entries[0, 0] * right.Entries[0, 1] + left.Entries[0, 1] * right.Entries[1, 1] + left.Entries[0, 2] * right.Entries[2, 1],
 
-    //    // and so on for another 7 entries
-    //);
-    //}
+        // and so on for another 7 entries
+    }
 
     public static bool operator ==(HMatrix2D left, HMatrix2D right)
     {

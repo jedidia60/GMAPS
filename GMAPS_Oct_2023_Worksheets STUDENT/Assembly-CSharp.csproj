@@ -64,14 +64,14 @@
     <Compile Include="Assets\01_VECTORS_worksheet\Soccer\SoccerPlayer.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\Scripts\Line.cs" />
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzHorizontalRuler.cs" />
+    <Compile Include="Assets\Math\HMatrix2D.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\Example\Example.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\Mario\MarioHVector2D.cs" />
+    <Compile Include="Assets\Math\TestMatrix.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\Scripts\Extensions.cs" />
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzVerticalRuler.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\_Demo\LineDemo.cs" />
-    <Compile Include="Assets\Math\HMatrix2D.cs" />
-    <Compile Include="Assets\Math\TestMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources_3rd Party\Ruler\readme.txt" />
