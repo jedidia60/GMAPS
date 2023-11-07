@@ -13,8 +13,8 @@ public class HMatrix2D
 
     public HMatrix2D(float[,] multiArray)
     {
-        for (int row = 0; row < 3; row++)
-            for (int col = 0; col < 3; col++)
+        for (int row = 0; row < multiArray.GetLength(0); row++)
+            for (int col = 0; col < multiArray.GetLength(1); col++)
                 entries[row, col] = multiArray[row, col];
     }
 
@@ -81,30 +81,30 @@ public class HMatrix2D
     // Note that the second argument is a HMatrix2D object
     public static HMatrix2D operator *(HMatrix2D left, HMatrix2D right)
     {
-        HMatrix2D result = new HMatrix2D();
-        for (int mat1Row = 0; mat1Row < 3; mat1Row++)
-            for (int mat2Col = 0; mat2Col < 3; mat2Col++)
+        HMatrix2D result = new HMatrix2D(new float[left.entries.GetLength(0), right.entries.GetLength(1)]);
+        for (int mat1Row = 0; mat1Row < left.entries.GetLength(0); mat1Row++)
+            for (int mat2Col = 0; mat2Col < right.entries.GetLength(1); mat2Col++)
             {
                 result.entries[mat1Row, mat2Col] = 0;
-                for (int insideNum = 0; insideNum < 3; insideNum++)
+                for (int insideNum = 0; insideNum < left.entries.GetLength(1); insideNum++)
                 {
                     result.entries[mat1Row, mat2Col] += left.entries[mat1Row, insideNum] * right.entries[insideNum, mat2Col];
                 }
             }
         return result;
-            /* 
-                00 01 02    00 xx xx
-                xx xx xx    10 xx xx
-                xx xx xx    20 xx xx
-                */
-            //left.Entries[0, 0] * right.Entries[0, 0] + left.Entries[0, 1] * right.Entries[1, 0] + left.Entries[0, 2] * right.Entries[2, 0],
+        /* 
+            00 01 02    00 xx xx
+            xx xx xx    10 xx xx
+            xx xx xx    20 xx xx
+            */
+        //left.Entries[0, 0] * right.Entries[0, 0] + left.Entries[0, 1] * right.Entries[1, 0] + left.Entries[0, 2] * right.Entries[2, 0],
 
-            /* 
-                00 01 02    xx 01 xx
-                xx xx xx    xx 11 xx
-                xx xx xx    xx 21 xx
-                */
-            //left.Entries[0, 0] * right.Entries[0, 1] + left.Entries[0, 1] * right.Entries[1, 1] + left.Entries[0, 2] * right.Entries[2, 1],
+        /* 
+            00 01 02    xx 01 xx
+            xx xx xx    xx 11 xx
+            xx xx xx    xx 21 xx
+            */
+        //left.Entries[0, 0] * right.Entries[0, 1] + left.Entries[0, 1] * right.Entries[1, 1] + left.Entries[0, 2] * right.Entries[2, 1],
 
         // and so on for another 7 entries
     }
@@ -173,10 +173,14 @@ public class HMatrix2D
     //    // your code here
     //}
 
-    //public void setRotationMat(float rotDeg)
-    //{
-    //    // your code here
-    //}
+    public void setRotationMat(float rotDeg)
+    {
+        setIdentity();
+        float rad = rotDeg * Mathf.Deg2Rad;
+        entries[0, 0] = entries[0, 0] * Mathf.Cos(rad) - entries[0, 1] * Mathf.Sin(rad);
+        entries[1, 1] = entries[0, 0] * Mathf.Sin(rad) + entries[1, 1] * Mathf.Cos(rad);
+
+    }
 
     //public void setScalingMat(float scaleX, float scaleY)
     //{
@@ -186,9 +190,9 @@ public class HMatrix2D
     public void Print()
     {
         string result = "";
-        for (int r = 0; r < 3; r++)
+        for (int r = 0; r < entries.GetLength(0); r++)
         {
-            for (int c = 0; c < 3; c++)
+            for (int c = 0; c < entries.GetLength(1); c++)
             {
                 result += entries[r, c] + "  ";
             }
