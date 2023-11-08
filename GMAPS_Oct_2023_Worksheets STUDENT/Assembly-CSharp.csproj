@@ -64,7 +64,6 @@
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\HMatrix2D.cs" />
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\MeshManager.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\VectorPart1\VectorExercises.cs" />
-    <Compile Include="Assets\Math\TransformMesh.cs" />
     <Compile Include="Assets\01_VECTORS_worksheet\Soccer\SoccerPlayer.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\Scripts\Line.cs" />
     <Compile Include="Assets\Resources_3rd Party\Ruler\zzHorizontalRuler.cs" />

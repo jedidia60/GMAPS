@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class HMatrix2D
 {
+    // Creating the 3x3 matrix for all HMatrix2D objects
     public float[,] entries { get; set; } = new float[3, 3];
 
+    // If an HMatrix2D object has been created with no parameters then set all values in the matrices to 0
     public HMatrix2D()
     {
         entries = new float[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
     }
 
+    // If an HMatrix2D object has been created with a existing matrix in it's parameter put those values into the HMatrix2D object
+    // The GetLength function allows me to get find the size of each dimension is in a multidimensional array
     public HMatrix2D(float[,] multiArray)
     {
         for (int row = 0; row < multiArray.GetLength(0); row++)
@@ -18,6 +22,7 @@ public class HMatrix2D
                 entries[row, col] = multiArray[row, col];
     }
 
+    // Create an HMatrix2D object with set numbers to go into matrix row by row
     public HMatrix2D(float m00, float m01, float m02,
              float m10, float m11, float m12,
              float m20, float m21, float m22)
@@ -38,6 +43,7 @@ public class HMatrix2D
         entries[2, 2] = m22;
     }
 
+    // Add the left HMatrix2D to the right HMatrix2D by looping through each of their row and columns
     public static HMatrix2D operator +(HMatrix2D left, HMatrix2D right)
     {
         HMatrix2D addition = new HMatrix2D();
@@ -48,6 +54,7 @@ public class HMatrix2D
         return addition;
     }
 
+    // Subtract the left HMatrix2D to the right HMatrix2D by looping through each of their row and columns
     public static HMatrix2D operator -(HMatrix2D left, HMatrix2D right)
     {
         HMatrix2D subtraction = new HMatrix2D();
@@ -58,6 +65,7 @@ public class HMatrix2D
         return subtraction;
     }
 
+    // Multiply the HMatrix2D object with a float by looping through each row and columns then multiplying it by the scalar value
     public static HMatrix2D operator *(HMatrix2D left, float scalar)
     {
         HMatrix2D multiplication = new HMatrix2D();
@@ -68,6 +76,7 @@ public class HMatrix2D
         return multiplication;
     }
 
+    // Multiply HMatrix2D object with HVector2D object to get a new HVector2D product. Treat HVector2D as a column vector, x at the 0, 0 position and y at the 1, 0 position
     // Note that the second argument is a HVector2D object
     public static HVector2D operator *(HMatrix2D left, HVector2D right)
     {
@@ -78,13 +87,18 @@ public class HMatrix2D
         );
     }
 
+    // Multiply 2 HMatrix2D object together as long they have the same inner value (Number of rows on first matrix = number of columns on second matrix)
     // Note that the second argument is a HMatrix2D object
+    // The GetLength function allows me to get find the size of each dimension is in a multidimensional array
     public static HMatrix2D operator *(HMatrix2D left, HMatrix2D right)
     {
         HMatrix2D result = new HMatrix2D(new float[left.entries.GetLength(0), right.entries.GetLength(1)]);
+
+        // Loop through the first HMatrix2D object row and then the second HMatrix2D object column, to get the matrix size of the new HMatrix2D product
         for (int mat1Row = 0; mat1Row < left.entries.GetLength(0); mat1Row++)
             for (int mat2Col = 0; mat2Col < right.entries.GetLength(1); mat2Col++)
             {
+                // Set all of the matrix value to 0 then loop through their inner value to get the position of each value in the matrix for multiplication
                 result.entries[mat1Row, mat2Col] = 0;
                 for (int insideNum = 0; insideNum < left.entries.GetLength(1); insideNum++)
                 {
@@ -168,10 +182,12 @@ public class HMatrix2D
                 entries[y, x] = x == y ? 1 : 0;
     }
 
-    //public void setTranslationMat(float transX, float transY)
-    //{
-    //    // your code here
-    //}
+    public void setTranslationMat(float transX, float transY)
+    {
+        setIdentity();
+        entries[0, 0] = transX;
+        entries[1, 1] = transY;
+    }
 
     public void setRotationMat(float rotDeg)
     {
@@ -179,7 +195,6 @@ public class HMatrix2D
         float rad = rotDeg * Mathf.Deg2Rad;
         entries[0, 0] = entries[0, 0] * Mathf.Cos(rad) - entries[0, 1] * Mathf.Sin(rad);
         entries[1, 1] = entries[0, 0] * Mathf.Sin(rad) + entries[1, 1] * Mathf.Cos(rad);
-
     }
 
     //public void setScalingMat(float scaleX, float scaleY)
