@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Ball2D : MonoBehaviour
 {
     public HVector2D Position = new HVector2D(0, 0);
     public HVector2D Velocity = new HVector2D(0, 0);
+
+    public float drag;
 
     [HideInInspector]
     public float Radius;
@@ -32,11 +35,11 @@ public class Ball2D : MonoBehaviour
         return distance <= Radius;
     }
 
-    //public bool IsCollidingWith(Ball2D other)
-    //{
-    //    float distance = Util.FindDistance(Position, other.Position);
-    //    return distance <= Radius + other.Radius;
-    //}
+    public bool IsCollidingWith(Ball2D other)
+    {
+        float distance = Util.FindDistance(Position, other.Position);
+        return distance <= Radius + other.Radius;
+    }
 
     public void FixedUpdate()
     {
@@ -52,6 +55,9 @@ public class Ball2D : MonoBehaviour
         Position.y += displacementY;
 
         transform.position = new Vector2(Position.x, Position.y);
+
+        Velocity.x /= drag;
+        Velocity.y /= drag;
     }
 }
 
